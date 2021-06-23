@@ -11,6 +11,11 @@ gem 'rack-cors'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'database_cleaner-active_record'
+  gem 'faker'
+  gem 'shoulda-matchers'
+  gem 'test-prof'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -19,11 +24,12 @@ group :development do
   gem 'spring'
 end
 
+gem 'factory_bot'
 gem 'devise'
 gem 'devise-jwt'
 gem 'action_policy-graphql'
 gem 'dotenv-rails'
-gem 'graphql'
+gem 'graphql', '<= 1.12.10'
 gem 'recursive-open-struct'
 gem 'search_object'
 gem 'search_object_graphql'

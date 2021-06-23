@@ -6,6 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
-  validates :role, presence: true
-  enum role: %i(bank rma)
+  validates :role, :first_name, :last_name, :url, presence: true
+  enum role: %i(rma bank)
 end
