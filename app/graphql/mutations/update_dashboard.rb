@@ -13,9 +13,10 @@ module Mutations
     end
 
     argument :attributes, DashboardUpdateType, required: true
+    type Types::DashboardType
 
     def resolve(attributes:)
-
+      Dashboards::Updater.new(current_user: current_user, params: attributes.to_h).call
     end
 
   end
