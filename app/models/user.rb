@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
-  has_one :dashboard
+  has_many :dashboards
 
   validates :role, :first_name, :last_name, :url, presence: true
   validates :url, format: { with: URI::DEFAULT_PARSER.make_regexp }
