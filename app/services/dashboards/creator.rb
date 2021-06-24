@@ -1,10 +1,7 @@
 module Dashboards
   class Creator < BaseService
     def call
-      Dashboard.new(params) do |dashboard|
-        authorize!(dashboard, to: :create?)
-        dashboard.save!
-      end
+      current_user.create_dashboard(params)
     end
   end
 end

@@ -1,7 +1,7 @@
 module Mutations
   class UpdateDashboard < Mutations::BaseMutation
     class DashboardUpdateType < GraphQL::Schema::InputObject
-      argument :id, GraphQL::Types::ID, required: true
+      argument :id, GraphQL::Types::ID, required: false
       argument :cid_no, String, required: false
       argument :license_no, String, required: false
       argument :number_plate, String, required: false
