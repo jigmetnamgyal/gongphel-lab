@@ -10,5 +10,6 @@ module Types
     field :amount, Integer, null: false
     field :start_date, GraphQL::Types::ISO8601Date, null: false
     field :end_date, GraphQL::Types::ISO8601Date, null: false
-  end
+    field :status_check, Boolean, null: false
+    end
 end

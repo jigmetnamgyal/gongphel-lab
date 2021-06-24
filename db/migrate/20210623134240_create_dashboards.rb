@@ -6,6 +6,7 @@ class CreateDashboards < ActiveRecord::Migration[6.1]
       t.string :number_plate
       t.boolean :status, default: true
       t.string :name
+      t.boolean :status_check, default: false
 
       t.timestamps
     end

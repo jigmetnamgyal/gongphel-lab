@@ -1,10 +1,8 @@
 module Types
   class MutationType < Types::BaseObject
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World"
-    end
+    include ActionPolicy::GraphQL::Behaviour
+
+    field :create_dashboard, mutation: Mutations::CreateDashboard
+    field :update_dashboard, mutation: Mutations::UpdateDashboard
   end
 end
