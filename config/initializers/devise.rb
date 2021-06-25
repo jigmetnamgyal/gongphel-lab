@@ -312,7 +312,7 @@ Devise.setup do |config|
     jwt.revocation_requests = [
       ['DELETE', %r{^/logout$}]
     ]
-    jwt.expiration_time = 100.minutes.to_i
+    jwt.expiration_time = 100000.minutes.to_i
   end
   # When set to false, does not sign a users in automatically after their password is
   # changed. Defaults to true, so a users is signed in automatically after changing a password.

@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 2021_06_25_163651) do
     t.index ["user_id"], name: "index_dashboards_on_user_id"
   end
 
-  create_table "request_applications", force: :cascade do |t|
+  create_table "request_applications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "cid_no"
     t.string "collateral_id"
     t.string "license_no"
     t.boolean "is_vehicle"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false

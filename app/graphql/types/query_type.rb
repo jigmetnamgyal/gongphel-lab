@@ -6,5 +6,7 @@ module Types
 
     field :dashboard, resolver: Resolvers::DashboardResolver
     field :dashboards, resolver: Resolvers::DashboardsResolver
+
+    field :list_request, resolver: Resolvers::RequestListResolver
   end
 end
