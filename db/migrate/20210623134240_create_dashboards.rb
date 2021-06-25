@@ -4,9 +4,9 @@ class CreateDashboards < ActiveRecord::Migration[6.1]
       t.string :cid_no
       t.string :license_no
       t.string :number_plate
-      t.boolean :status, default: true
+      t.boolean :has_loan, default: true
       t.string :name
-      t.boolean :status_check, default: false
+      t.integer :status, default: 0
 
       t.timestamps
     end
