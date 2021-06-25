@@ -12,24 +12,28 @@ input CreateDashboardInput {
 
 type Dashboard {
   amount: Int!
+  branch: String!
   cidNo: String!
   debtorName: String!
+  debtorType: String!
   endDate: ISO8601Date!
+  hasLoan: Boolean!
   id: ID!
   licenseNo: String!
   name: String
   numberPlate: String
   startDate: ISO8601Date!
   status: Boolean!
-  statusCheck: Boolean!
 }
 
 input DashboardCreate {
   amount: Int!
+  branch: String!
   cidNo: String!
   debtorName: String!
+  debtorType: String!
   endDate: ISO8601Date!
-  licenseNo: String!
+  licenseNo: String
   name: String
   numberPlate: String
   startDate: ISO8601Date!
@@ -37,14 +41,18 @@ input DashboardCreate {
 
 input DashboardUpdate {
   amount: Int
+  branch: String
   cidNo: String
   debtorName: String
+  debtorType: String
   endDate: ISO8601Date
+  hasLoan: String
   id: ID!
   licenseNo: String
   name: String
   numberPlate: String
   startDate: ISO8601Date
+  status: String
 }
 
 """

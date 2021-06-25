@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_052002) do
+ActiveRecord::Schema.define(version: 2021_06_25_163651) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "dashboards", force: :cascade do |t|
+  create_table "dashboards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "cid_no"
     t.string "license_no"
     t.string "number_plate"
+    t.string "debtor_type"
+    t.string "branch"
     t.boolean "has_loan", default: true
     t.string "name"
     t.integer "status", default: 0
@@ -33,9 +36,14 @@ ActiveRecord::Schema.define(version: 2021_06_25_052002) do
   end
 
   create_table "request_applications", force: :cascade do |t|
-    t.string "name"
+    t.string "cid_no"
+    t.string "collateral_id"
+    t.string "license_no"
+    t.boolean "is_vehicle"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_request_applications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +65,5 @@ ActiveRecord::Schema.define(version: 2021_06_25_052002) do
   end
 
   add_foreign_key "dashboards", "users"
+  add_foreign_key "request_applications", "users"
 end

@@ -16,7 +16,7 @@ module Resolvers
     end
 
     def apply_status_filter(scope, value)
-      scope.where(status: value)
+      scope.where(has_loan: value)
     end
 
     def apply_search(scope, value)
@@ -24,9 +24,11 @@ module Resolvers
         "CONCAT_WS(
           ' ',
           cid_no,
+          id,
           license_no,
           number_plate,
-          name)
+          debtor_name
+          )
           iLIKE ?",
         "%#{value.strip}%"
       )

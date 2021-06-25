@@ -2,8 +2,10 @@ module Mutations
   class CreateDashboard < Mutations::BaseMutation
     class DashboardCreateType < GraphQL::Schema::InputObject
       argument :cid_no, String, required: true
-      argument :license_no, String, required: true
+      argument :license_no, String, required: false
       argument :number_plate, String, required: false
+      argument :debtor_type, String, required: true
+      argument :branch, String, required: true
       argument :name, String, required: false
       argument :debtor_name, String, required: true
       argument :amount, Integer, required: true

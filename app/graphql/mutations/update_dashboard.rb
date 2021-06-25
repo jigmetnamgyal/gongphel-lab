@@ -1,10 +1,14 @@
 module Mutations
   class UpdateDashboard < Mutations::BaseMutation
     class DashboardUpdateType < GraphQL::Schema::InputObject
-      argument :id, GraphQL::Types::ID, required: false
+      argument :id, GraphQL::Types::ID, required: true
       argument :cid_no, String, required: false
       argument :license_no, String, required: false
       argument :number_plate, String, required: false
+      argument :debtor_type, String, required: false
+      argument :branch, String, required: false
+      argument :has_loan, String, required: false
+      argument :status, String, required: false
       argument :name, String, required: false
       argument :debtor_name, String, required: false
       argument :amount, Integer, required: false
