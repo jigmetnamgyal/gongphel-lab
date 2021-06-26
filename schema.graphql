@@ -184,20 +184,32 @@ type Query {
     skip: Int
     status: Boolean
   ): DashboardsConnection!
-  listRequest: Request!
+  listRequest(id: ID!): Request!
+  listsRequest: Request!
 }
 
 type Request {
+  amount: Int!
+  branch: String!
   cidNo: String!
-  collateralId: String
-  isVehicle: String!
+  collateralId: String!
+  debtorName: String!
+  debtorType: String!
+  endDate: ISO8601Date!
+  hasLoan: Boolean
+  isVehicle: Boolean!
   licenseNo: String
+  name: String!
+  numberPlate: String
+  standing: String!
+  startDate: ISO8601Date!
+  status: Int!
 }
 
 input RequestCreate {
   cidNo: String!
   collateralId: String!
-  isVehicle: String!
+  isVehicle: Boolean!
   licenseNo: String
 }
 

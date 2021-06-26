@@ -4,7 +4,7 @@ module Mutations
       argument :cid_no, String, required: true
       argument :collateral_id, String, required: true
       argument :license_no, String, required: false
-      argument :is_vehicle, String, required: true
+      argument :is_vehicle, Boolean, required: true
     end
 
     argument :attributes, RequestCreateType, required: true

@@ -8,5 +8,6 @@ module Types
     field :dashboards, resolver: Resolvers::DashboardsResolver
 
     field :list_request, resolver: Resolvers::RequestListResolver
+    field :lists_request, resolver: Resolvers::RequestListsResolver
   end
 end

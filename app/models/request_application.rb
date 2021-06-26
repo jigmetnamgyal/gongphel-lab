@@ -1,7 +1,5 @@
 class RequestApplication < ApplicationRecord
-  belongs_to :user
+  validates :standing, presence: true
 
-  validates :cid_no, :collateral_id, :status, presence: true
-
-  enum status: %i(pending no_hit hit)
+  enum standing: %i(pending hit no_hit)
 end

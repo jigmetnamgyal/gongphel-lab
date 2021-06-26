@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_163651) do
+ActiveRecord::Schema.define(version: 2021_06_26_064905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -18,16 +18,16 @@ ActiveRecord::Schema.define(version: 2021_06_25_163651) do
 
   create_table "dashboards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "cid_no"
-    t.string "license_no"
-    t.string "number_plate"
+    t.string "license_no", default: ""
+    t.string "number_plate", default: ""
     t.string "debtor_type"
     t.string "branch"
     t.boolean "has_loan", default: true
-    t.string "name"
+    t.string "name", default: ""
     t.integer "status", default: 0
+    t.string "debtor_name", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "debtor_name"
     t.integer "amount"
     t.date "start_date"
     t.date "end_date"
@@ -40,11 +40,19 @@ ActiveRecord::Schema.define(version: 2021_06_25_163651) do
     t.string "collateral_id"
     t.string "license_no"
     t.boolean "is_vehicle"
-    t.integer "status", default: 0
+    t.string "number_plate", default: ""
+    t.string "debtor_type", default: ""
+    t.string "branch", default: ""
+    t.integer "has_loan"
+    t.string "name", default: ""
+    t.string "status", default: "received"
+    t.integer "standing", default: 0
+    t.string "debtor_name", default: ""
+    t.integer "amount", default: 0
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_request_applications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,5 +74,4 @@ ActiveRecord::Schema.define(version: 2021_06_25_163651) do
   end
 
   add_foreign_key "dashboards", "users"
-  add_foreign_key "request_applications", "users"
 end

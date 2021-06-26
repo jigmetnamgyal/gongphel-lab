@@ -6,7 +6,6 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
 
   has_many :dashboards
-  has_many :request_applications
 
   validates :role, :first_name, :last_name, :url, presence: true
   validates :url, format: { with: URI::DEFAULT_PARSER.make_regexp }

@@ -4,6 +4,7 @@ module Types
 
     field :create_dashboard, mutation: Mutations::CreateDashboard
     field :update_dashboard, mutation: Mutations::UpdateDashboard
+
     field :create_request, mutation: Mutations::CreateRequest
   end
 end
