@@ -22,12 +22,14 @@
       tr:nth-child(even) {
           background-color: #dddddd;
       }
+
+      h1 {
+          color: rebeccapurple;
+      }
   </style>
 </head>
 
-<h2>A user with CID No: <b> <%= @request_in_json['cid_no']%> </b> has requested for a status check.</h2>
-
-<h2>HTML Table</h2>
+<h1>A user with CID No: <b> <%= @request_in_json['cid_no']%> </b> has requested for a status check.</h1>
 
 <table>
   <tr>
@@ -41,10 +43,31 @@
     <td><%= @request_in_json['result']%></td>
   </tr>
 </table>
+</p> CRST ©<%= Date.current.year %>. Powered by Gongphel Team </p>
 
+<h1>E receipt</h1>
+
+<h4>Contact Info</h4>
 <div>
-  </p> CRST ©<%= Date.current.year %>. Powered by Gongphel Team </p>
+  <p><b>Address: </b> Olakha, building number 25</p>
+  <p><b>Email: </b> GongphelTeam@gmail.com</p>
+  <p><b>Phone: </b> 555-555-555</p>
 </div>
+
+<table>
+  <tr>
+    <th>collateral_id</th>
+    <th>Amount</th>
+    <th>tax</th>
+    <th>total</th>
+  </tr>
+  <tr>
+    <td><b><%= @request_in_json['collateral_id']%></b></td>
+    <td><b>100 Nu/-</b></td>
+    <td><b>10 Nu/-</b></td>
+    <td><b>110 Nu/-</b></td>
+  </tr>
+</table>
 </body>
 </html>
 
