@@ -8,12 +8,12 @@ module Resolvers
         id = element[:collateral_id]
         dash = Dashboard.where(id: id).first
         if !(dash)
-          binding.pry
-          element.update!(status: 2)
+          element.update!(result: 2)
         else
           a = dash.attributes
           a.delete("user_id")
           element.update!(a)
+          element.update!(status: false)
         end
       end
     end

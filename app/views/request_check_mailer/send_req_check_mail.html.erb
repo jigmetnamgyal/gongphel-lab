@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+
+<head>
+  <style>
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
+  </style>
+</head>
+
+<h2>A user with CID No: <b> <%= @request_in_json['cid_no']%> </b> has requested for a status check.</h2>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>collateral_id</th>
+    <th>status</th>
+    <th>result</th>
+  </tr>
+  <tr>
+    <td><%= @request_in_json['collateral_id']%></td>
+    <td><%= @request_in_json['status']%></td>
+    <td><%= @request_in_json['result']%></td>
+  </tr>
+</table>
+
+<div>
+  </p> CRST ©<%= Date.current.year %>. Powered by Gongphel Team </p>
+</div>
+</body>
+</html>
+

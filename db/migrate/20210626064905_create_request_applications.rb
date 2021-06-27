@@ -4,14 +4,13 @@ class CreateRequestApplications < ActiveRecord::Migration[6.1]
       t.string :cid_no
       t.string :collateral_id
       t.string :license_no
-      t.boolean :is_vehicle
       t.string :number_plate, default: ""
       t.string :debtor_type, default: ""
       t.string :branch, default: ""
       t.integer :has_loan, default: "no hit"
       t.string :name, default: ""
-      t.string :status, default: "received"
-      t.integer :standing, default: 0
+      t.integer :status, default: 0
+      t.integer :result, default: 1
       t.string :debtor_name, default: ""
       t.integer :amount, default: 0
       t.date :start_date, default: nil

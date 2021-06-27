@@ -1,5 +1,7 @@
 class RequestApplication < ApplicationRecord
-  validates :standing, presence: true
 
-  enum standing: %i(pending hit no_hit)
+  validates :result, presence: true
+
+  enum result: %i(pending hit no-hit)
+  enum status: %i(pending_bank_approval received)
 end
