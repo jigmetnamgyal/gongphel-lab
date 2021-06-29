@@ -5,4 +5,5 @@ class Dashboard < ApplicationRecord
   # validates_with StartDateValidator, EndDateValidator
 
   enum status: %i(pending_bank_approval received)
+  enum result: %i(pending hit no-hit)
 end

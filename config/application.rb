@@ -23,7 +23,7 @@ module GongphelLab
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.hosts << "d46725bbe954.ngrok.io"
+    config.hosts << "65f8dbae472e.ngrok.io"
 
 
     Rails.application.config.middleware.insert_before 0, Rack::Cors do

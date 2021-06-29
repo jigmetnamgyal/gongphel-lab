@@ -2,11 +2,13 @@
 <html>
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
-<body>
 
-<head>
+
   <style>
+    .thisthat{
+        background-color: floralwhite;
+        padding: 20px;
+    }
       table {
           font-family: arial, sans-serif;
           border-collapse: collapse;
@@ -28,7 +30,7 @@
       }
   </style>
 </head>
-
+<body class="thisthat">
 <h1>A user with CID No: <b> <%= @request_in_json['cid_no']%> </b> has requested for a status check.</h1>
 
 <table>
@@ -45,8 +47,8 @@
 </table>
 </p> CRST ©<%= Date.current.year %>. Powered by Gongphel Team </p>
 
-<h1>E receipt</h1>
-
+<h1>E receipt: <%= @request_in_json['id']%></h1>
+<p>Receipt idL </p>
 <h4>Contact Info</h4>
 <div>
   <p><b>Address: </b> Olakha, building number 25</p>
@@ -67,7 +69,10 @@
     <td><b>10 Nu/-</b></td>
     <td><b>110 Nu/-</b></td>
   </tr>
+
 </table>
+<h3>Track your application <a href="https://localhost:4200/track-application">here</a> </h3>
+
 </body>
 </html>
 

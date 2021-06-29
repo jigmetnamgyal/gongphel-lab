@@ -13,7 +13,7 @@ module Resolvers
           a = dash.attributes
           a.delete("user_id")
           element.update!(a)
-          element.update!(status: false)
+          element.update!(status: 0)
         end
       end
     end

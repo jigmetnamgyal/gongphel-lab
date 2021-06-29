@@ -5,3 +5,5 @@ class RequestApplication < ApplicationRecord
   enum result: %i(pending hit no-hit)
   enum status: %i(pending_bank_approval received)
 end
+
+

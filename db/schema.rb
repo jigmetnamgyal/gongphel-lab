@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_091102) do
+ActiveRecord::Schema.define(version: 2021_06_27_055428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_06_26_091102) do
     t.date "start_date"
     t.date "end_date"
     t.bigint "user_id", null: false
+    t.integer "result", default: 1
     t.index ["user_id"], name: "index_dashboards_on_user_id"
   end
 

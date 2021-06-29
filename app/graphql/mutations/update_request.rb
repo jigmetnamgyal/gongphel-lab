@@ -2,7 +2,7 @@ module Mutations
   class UpdateRequest < Mutations::BaseMutation
     class RequestUpdateType < GraphQL::Schema::InputObject
       argument :id, GraphQL::Types::ID, required: true
-      argument :status, String, required: true
+      argument :status, Integer, required: true
       argument  :result, Integer, required: true
     end
 

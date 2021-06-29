@@ -6,7 +6,8 @@ module Types
     field :number_plate, String, null: true
     field :debtor_type, String, null: false
     field :branch, String, null: false
-    field :status, Boolean, null: false
+    field :status, String, null: false
+    field :result, String, null: false
     field :name, String, null: true
     field :debtor_name, String, null: false
     field :amount, Integer, null: false

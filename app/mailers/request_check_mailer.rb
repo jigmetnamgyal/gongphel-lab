@@ -5,6 +5,6 @@ class RequestCheckMailer < ApplicationMailer
     @request = params
     @request_in_json = @request[:req].attributes
 
-    mail(to: "jigmetashi02@gmail.com", subject: "[Gongphel Team] Request status check")
+    mail(to: "jigmetashi02@gmail.com ", subject: "[Gongphel Team] Request status check")
   end
 end

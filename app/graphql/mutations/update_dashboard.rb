@@ -8,7 +8,8 @@ module Mutations
       argument :debtor_type, String, required: false
       argument :branch, String, required: false
       argument :has_loan, String, required: false
-      argument :status, String, required: false
+      argument :status, Integer, required: false
+      argument :result, Integer, required: false
       argument :name, String, required: false
       argument :debtor_name, String, required: false
       argument :amount, Integer, required: false
